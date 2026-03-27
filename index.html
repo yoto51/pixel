@@ -47,7 +47,7 @@ background: rgba(15, 15, 35, 0.9); /* fallback for perf */
       will-change: box-shadow, backdrop-filter;
       transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .nav-logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: var(--text); background: linear-gradient(135deg, #7c5cff 0%, #ff4ca8 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: var(--text); background: linear-gradient(135deg, #7c5cff 0%, #ff4ca8 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
     .nav-logo .px { background: none; background-clip: unset; -webkit-background-clip: unset; -webkit-text-fill-color: unset; color: var(--accent); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px; }
@@ -277,6 +277,7 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
       box-shadow: 0 20px 64px rgba(0, 0, 0, 0.5);
       animation: slideUpModal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       will-change: transform, opacity;
+      position: relative;
     }
     @keyframes slideUpModal { from{opacity:0;transform:translateY(40px) scale(0.95)} to{opacity:1;transform:translateY(0) scale(1)} }
     .modal-close {
@@ -321,33 +322,29 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
     .modal-actions .btn-secondary { background: rgba(255, 255, 255, 0.08); border: 1.5px solid rgba(255, 255, 255, 0.15); }
     .modal-actions .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
 
-    /* ADMIN PANEL STYLES - OBFUSCATED */
+    /* ADMIN PANEL STYLES */
     .admin-panel { display: none !important; opacity: 0 !important; pointer-events: none !important; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); align-items: center; justify-content: center; }
     .admin-panel.active { display: flex !important; opacity: 1 !important; pointer-events: all !important; }
     .admin-content { background: linear-gradient(135deg, rgba(26,26,62,0.98), rgba(15,15,35,0.98)); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 30px 80px rgba(124,92,255,0.4); }
     .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-    .admin-title { font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, var(--text), var(--accent)); -webkit-background-clip: text; background-clip: text; }
+    .admin-title { font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, var(--text), var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .admin-logout { background: rgba(255,76,168,0.2); color: var(--accent2); border: 1px solid rgba(255,76,168,0.4); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
     .admin-logout:hover { background: rgba(255,76,168,0.4); transform: translateY(-2px); }
     .admin-section { margin-bottom: 2rem; }
     .admin-section h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; }
-    .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
-    .stat-card { background: rgba(255,255,255,0.1); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
-    .stat-number { font-size: 2rem; font-weight: 900; color: var(--accent); }
-    .stat-label { color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 1px; }
-    .config-form label { display: block; color: var(--text); margin-bottom: 0.5rem; font-weight: 600; }
-    .config-form input { width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.08); border: 1px solid var(--border); border-radius: 12px; color: var(--text); font-size: 1rem; }
-    .config-form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(124,92,255,0.2); }
     .save-btn { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; border: none; padding: 0.8rem 2rem; border-radius: 25px; font-weight: 700; cursor: pointer; margin-top: 1rem; width: 100%; }
     .save-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124,92,255,0.4); }
-    .password-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center; }
-    .password-input { background: rgba(15,15,35,0.95); border: 2px solid var(--accent); border-radius: 20px; padding: 2rem; text-align: center; backdrop-filter: blur(20px); }
-    .password-input input { width: 250px; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--border); border-radius: 12px; color: var(--text); font-size: 1.1rem; text-align: center; margin-bottom: 1rem; }
-    .password-input button { background: var(--accent); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 700; cursor: pointer; width: 100%; }
-    .password-input button:hover { background: var(--accent2); }
 
-    /* ANTI-INSPECT */
-
+    /* PASSWORD MODAL FOR ADMIN */
+    #password-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center; }
+    #password-modal.active { display: flex; }
+    #password-modal .modal-content { text-align: center; }
+    #admin-pass { width:100%; padding:0.8rem; border-radius:12px; margin-top:1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text); font-size: 1rem; }
+    #admin-pass:focus { outline: none; border-color: var(--accent); }
+    #admin-form input { width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.08); border: 1px solid var(--border); border-radius: 12px; color: var(--text); font-size: 1rem; margin-bottom: 0.5rem; }
+    #admin-form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(124,92,255,0.2); }
+    #admin-form > div { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    #admin-form label { display: block; color: var(--muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.3rem; }
 
     /* RESPONSIVE */
     @media(max-width:1100px){ .pricing-grid{grid-template-columns:repeat(2,1fr);} }
@@ -456,7 +453,7 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo"><span class="px">Pixel</span>Prash</div>
+    <div class="nav-logo" id="secret-trigger"><span class="px">Pixel</span>Prash</div>
     <ul class="nav-links">
       <li><a href="#pricing">Plans</a></li>
       <li><a href="#order">How It Works</a></li>
@@ -498,7 +495,7 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             View Plans
           </a>
-<a href="javascript:void(0)" class="btn btn-outline" onclick="openDMModal('contact')">
+          <a href="javascript:void(0)" class="btn btn-outline" onclick="openDMModal('contact')">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             DM Me on Discord
           </a>
@@ -534,101 +531,8 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
         <p class="section-sub">Every plan includes a clean, modern design built to impress clients and make you look like a pro from day one.</p>
       </div>
 
-      <div class="pricing-grid reveal-stagger">
+      <div class="pricing-grid reveal-stagger" id="pricing-container"></div>
 
-        <!-- STARTER — $10 (brother's card) -->
-        <div class="pricing-card card-t1">
-          <div class="card-preview">
-<img src="tier1.webp" alt="Starter portfolio preview" loading="eager" fetchpriority="high" onerror="this.src='$10.png';this.style.filter='brightness(1.1)'" />
-          </div>
-          <div class="card-body">
-            <div class="card-tier">Starter</div>
-            <div class="card-title">Basic Portfolio</div>
-            <div class="card-price"><sup>$</sup>10</div>
-            <p class="card-desc">A clean, simple portfolio that gets you online fast. Perfect if you're just starting out and need a professional presence right away.</p>
-            <div class="card-actions">
-              <a href="https://vfxaloshee.vercel.app" target="_blank" rel="noopener" class="btn btn-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Example
-              </a>
-              <a href="https://discord.com/users/1353401419784257639" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                DM Me
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ADVANCED — $20 (featured) -->
-        <div class="pricing-card card-t2 featured">
-          <div class="featured-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Popular
-          </div>
-          <div class="card-preview">
-<img src="tier2.webp" alt="Advanced portfolio preview" loading="eager" fetchpriority="high" onerror="this.src='$20.png';this.style.filter='brightness(1.1)'" />
-          </div>
-          <div class="card-body">
-            <div class="card-tier">Advanced</div>
-            <div class="card-title">Client-Ready Portfolio</div>
-            <div class="card-price"><sup>$</sup>20</div>
-            <p class="card-desc">A polished, high-impact portfolio with advanced layout and styling. Makes you look established and serious to potential clients.</p>
-            <div class="card-actions">
-              <a href="https://riyacreates.netlify.app" target="_blank" rel="noopener" class="btn btn-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Example
-              </a>
-              <a href="https://discord.com/channels/@me/1353401419784257639" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                DM Me
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PREMIUM — $30 -->
-        <div class="pricing-card card-t3">
-          <div class="card-preview">
-<img src="tier3.webp" alt="Premium portfolio preview" loading="eager" fetchpriority="high" onerror="this.src='$30.png';this.style.filter='brightness(1.1)'" />
-          </div>
-          <div class="card-body">
-            <div class="card-tier">Premium</div>
-            <div class="card-title">Premium Portfolio</div>
-            <div class="card-price"><sup>$</sup>30</div>
-            <p class="card-desc">A full-featured premium portfolio with modern sections, smooth animations, and a design that positions you as a top-tier professional.</p>
-            <div class="card-actions">
-              <a href="https://portfolioriyahh.netlify.app" target="_blank" rel="noopener" class="btn btn-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Example
-              </a>
-              <a href="https://discord.com/users/1353401419784257639" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                DM Me
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CUSTOM — $50–100 -->
-        <div class="pricing-card card-t4">
-          <div class="card-preview">
-<img src="custom.jpg" alt="Custom portfolio preview" loading="eager" fetchpriority="high" onerror="this.src='custom.jpg';this.style.filter='brightness(1.1)'" />
-          </div>
-          <div class="card-body">
-            <div class="card-tier">Custom</div>
-            <div class="card-title">Custom Portfolio</div>
-            <div class="card-price"><sup>$</sup>50<span class="range">–100</span></div>
-            <p class="card-desc">Built from scratch around your brand, your story, and your goals. Unique layout, custom sections, and a one-of-a-kind design nobody else has.</p>
-          <div class="card-actions">
-            <a href="https://discord.com/users/1353401419784257639" target="_blank" rel="noopener" class="btn btn-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              DM Me
-            </a>
-          </div>
-        </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -675,7 +579,7 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
 
 
   <!-- CONTACT -->
-<section id="contact" class="section">
+  <section id="contact" class="section">
     <div class="container">
       <div class="contact-inner reveal">
         <div class="section-label">
@@ -696,7 +600,7 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
             <div style="font-size:.85rem;color:var(--muted);margin-top:.3rem;font-weight:600;">Find me on Discord — I reply fast</div>
           </div>
 
-<div class="email-card">
+          <div class="email-card">
             <a href="mailto:officialprashant.org@gmail.com" style="color:inherit;text-decoration:none;">
             <div class="email-icon-wrap">
               <svg width="28" height="21" viewBox="0 0 24 18" fill="currentColor">
@@ -752,19 +656,187 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
   </footer>
 
   <!-- ADMIN PANEL -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-content">
+      <div class="admin-header">
+        <div class="admin-title">⚡ Admin Panel</div>
+        <button class="admin-logout" onclick="logoutAdmin()">Logout</button>
+      </div>
+      <div class="admin-section">
+        <h3>Edit Pricing Cards</h3>
+        <div id="admin-form"></div>
+        <button class="save-btn" onclick="saveAdmin()">💾 Save Changes</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- PASSWORD MODAL -->
+  <div id="password-modal">
+    <div class="modal-content">
+      <div class="modal-title">🔐 Admin Access</div>
+      <input id="admin-pass" type="password" placeholder="Enter password" />
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="checkPassword()">Enter</button>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // Prevent layout thrashing - batch DOM reads/writes
-    let tiltResetTimeout;
-    let scrollTimeout;
-    let lastScrollY = 0;
+    // ================= PRICING DATA =================
+    const defaultData = [
+      {
+        tier:"Starter",
+        title:"Basic Portfolio",
+        price:10,
+        description:"A clean, simple portfolio that gets you online fast. Perfect if you're just starting out and need a professional presence right away.",
+        image:"tier1.webp",
+        fallback:"$10.png",
+        example:"https://vfxaloshee.vercel.app",
+        discord:"https://discord.com/users/1353401419784257639",
+        featured:false,
+        cardClass:"card-t1"
+      },
+      {
+        tier:"Advanced",
+        title:"Client-Ready Portfolio",
+        price:20,
+        description:"A polished, high-impact portfolio with advanced layout and styling. Makes you look established and serious to potential clients.",
+        image:"tier2.webp",
+        fallback:"$20.png",
+        example:"https://riyacreates.netlify.app",
+        discord:"https://discord.com/channels/@me/1353401419784257639",
+        featured:true,
+        cardClass:"card-t2"
+      },
+      {
+        tier:"Premium",
+        title:"Premium Portfolio",
+        price:30,
+        description:"A full-featured premium portfolio with modern sections, smooth animations, and a design that positions you as a top-tier professional.",
+        image:"tier3.webp",
+        fallback:"$30.png",
+        example:"https://portfolioriyahh.netlify.app",
+        discord:"https://discord.com/users/1353401419784257639",
+        featured:false,
+        cardClass:"card-t3"
+      },
+      {
+        tier:"Custom",
+        title:"Custom Portfolio",
+        price:"50–100",
+        description:"Built from scratch around your brand, your story, and your goals. Unique layout, custom sections, and a one-of-a-kind design nobody else has.",
+        image:"custom.jpg",
+        fallback:"custom.jpg",
+        example:null,
+        discord:"https://discord.com/users/1353401419784257639",
+        featured:false,
+        cardClass:"card-t4"
+      }
+    ];
 
-    // Smooth scroll position tracking with debounce
-    // Optimized scroll - 50ms debounce for buttery smooth
+    function getData(){
+      try { return JSON.parse(localStorage.getItem("pricingData")) || defaultData; }
+      catch(e){ return defaultData; }
+    }
+    function saveData(data){
+      localStorage.setItem("pricingData", JSON.stringify(data));
+    }
+
+    // ================= RENDER PRICING =================
+    function renderPricing(){
+      const data = getData();
+      const container = document.getElementById("pricing-container");
+
+      container.innerHTML = data.map((item, i) => `
+        <div class="pricing-card ${item.cardClass} ${item.featured ? 'featured' : ''}">
+          ${item.featured ? `<div class="featured-badge"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Popular</div>` : ''}
+          <div class="card-preview">
+            <img src="${item.image}" alt="${item.tier} portfolio preview" loading="eager" fetchpriority="high" onerror="this.src='${item.fallback}';this.style.filter='brightness(1.1)'" />
+          </div>
+          <div class="card-body">
+            <div class="card-tier">${item.tier}</div>
+            <div class="card-title">${item.title}</div>
+            <div class="card-price"><sup>$</sup>${item.price}</div>
+            <p class="card-desc">${item.description}</p>
+            <div class="card-actions">
+              ${item.example ? `<a href="${item.example}" target="_blank" rel="noopener" class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Example</a>` : ''}
+              <a href="${item.discord}" target="_blank" rel="noopener" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> DM Me</a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      // Re-attach card interactions after render
+      attachCardInteractions();
+    }
+
+    renderPricing();
+
+    // ================= SECRET TRIGGER (logo clicks) =================
+    let seq = [];
+    const correct = ["L","R","L","L"];
+
+    const trigger = document.getElementById("secret-trigger");
+    trigger.addEventListener("mousedown", (e) => {
+      if(e.button === 0) seq.push("L");
+      if(e.button === 2) seq.push("R");
+      if(seq.length > 4) seq.shift();
+      if(JSON.stringify(seq) === JSON.stringify(correct)){
+        document.getElementById("password-modal").classList.add("active");
+        seq = [];
+      }
+    });
+    trigger.addEventListener("contextmenu", e => e.preventDefault());
+
+    // ================= PASSWORD =================
+    let serverPassword = "Pp620346";
+
+    function checkPassword(){
+      const input = document.getElementById("admin-pass").value;
+      if(input === serverPassword){
+        document.getElementById("password-modal").classList.remove("active");
+        document.getElementById("adminPanel").classList.add("active");
+        renderAdmin();
+      } else {
+        alert("Wrong password");
+      }
+    }
+
+    // ================= ADMIN =================
+    function renderAdmin(){
+      const data = getData();
+      const form = document.getElementById("admin-form");
+      form.innerHTML = data.map((item, i) => `
+        <div>
+          <label>Card ${i+1} — ${item.tier} — Title</label>
+          <input value="${item.title}" onchange="updateField(${i},'title',this.value)" placeholder="Title">
+          <label>Price</label>
+          <input value="${item.price}" onchange="updateField(${i},'price',this.value)" placeholder="Price">
+          <label>Description</label>
+          <input value="${item.description}" onchange="updateField(${i},'description',this.value)" placeholder="Description">
+        </div>
+      `).join("");
+    }
+
+    function updateField(i, key, value){
+      const data = getData();
+      data[i][key] = value;
+      saveData(data);
+    }
+
+    function saveAdmin(){
+      renderPricing();
+      document.getElementById("adminPanel").classList.remove("active");
+    }
+
+    function logoutAdmin(){
+      document.getElementById("adminPanel").classList.remove("active");
+    }
+
+    // ================= EXISTING SITE JS =================
     let ticking = false;
     window.addEventListener('scroll', () => {
-      lastScrollY = window.scrollY;
+      const lastScrollY = window.scrollY;
       if (!ticking) {
         requestAnimationFrame(() => {
           const nav = document.querySelector('nav');
@@ -775,51 +847,27 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
       }
     }, { passive: true });
 
-    // RAF parallax removed for 60fps scroll smoothness
-    // Blobs now static - massive perf win
-
-    // Intersection Observer for reveal animations
-// Native reveal - no forced animations (perf win)
-    console.log('✅ Native IntersectionObserver for reveals - perf optimized');
-    
-    // Keep observer as fallback
     const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { 
-        if(e.isIntersecting){ 
-          e.target.classList.add('visible'); 
-        } 
-      });
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
     }, { threshold: 0.15 });
     revealEls.forEach(el => observer.observe(el));
 
-    // Plan details for DM messages
     const planDetails = {
-      'starter': { 
-        name: 'Basic Portfolio ($10)', 
-        desc: 'Clean, simple portfolio perfect for getting online fast. I\'ll build it and deliver your files within 48 hours.' 
-      },
-      'advanced': { 
-        name: 'Client-Ready Portfolio ($20)', 
-        desc: 'Polished, high-impact portfolio with advanced layout. Makes you look established - perfect for serious clients.' 
-      },
-      'premium': { 
-        name: 'Premium Portfolio ($30)', 
-        desc: 'Full-featured premium portfolio with smooth animations and modern sections. Top-tier professional design.' 
-      },
-      'custom': { 
-        name: 'Custom Portfolio ($50-100)', 
-        desc: 'Fully custom built around your brand & goals. Unique layout, tailored sections, completely one-of-a-kind design.' 
-      }
+      'starter':  { name: 'Basic Portfolio ($10)',       desc: "Clean, simple portfolio perfect for getting online fast. I'll build it and deliver your files within 48 hours." },
+      'advanced': { name: 'Client-Ready Portfolio ($20)', desc: "Polished, high-impact portfolio with advanced layout. Makes you look established - perfect for serious clients." },
+      'premium':  { name: 'Premium Portfolio ($30)',      desc: "Full-featured premium portfolio with smooth animations and modern sections. Top-tier professional design." },
+      'custom':   { name: 'Custom Portfolio ($50-100)',   desc: "Fully custom built around your brand & goals. Unique layout, tailored sections, completely one-of-a-kind design." },
+      'contact':  { name: 'General Inquiry',             desc: "Hi @prashweb! I'd like to discuss a portfolio website. Can we talk?" }
     };
 
     let currentMessage = '';
 
-    // Open DM Modal with plan details
-    function openDMModal(planKey) {
-      const plan = planDetails[planKey];
-      const message = `Hi @prashweb! I'm interested in the ${plan.name}. ${plan.desc}`;
-      
+    function openDMModal(planKey){
+      const plan = planDetails[planKey] || planDetails['contact'];
+      const message = planKey === 'contact'
+        ? plan.desc
+        : `Hi @prashweb! I'm interested in the ${plan.name}. ${plan.desc}`;
       currentMessage = message;
       document.getElementById('modalPlanName').textContent = plan.name;
       document.getElementById('modalMessage').textContent = message;
@@ -827,250 +875,127 @@ background: rgba(124, 92, 255, 0.15); /* fallback for perf */
       document.body.style.overflow = 'hidden';
     }
 
-    // Close DM Modal
-    function closeDMModal() {
+    function closeDMModal(){
       document.getElementById('dmModal').classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // Copy message to clipboard
-    function copyMessage() {
+    function copyMessage(){
       navigator.clipboard.writeText(currentMessage).then(() => {
         const btn = event.target.closest('.btn');
         const originalHTML = btn.innerHTML;
         btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
-        setTimeout(() => {
-          btn.innerHTML = originalHTML;
-        }, 2000);
+        setTimeout(() => { btn.innerHTML = originalHTML; }, 2000);
       });
     }
 
-    // Close modal on background click
     document.getElementById('dmModal')?.addEventListener('click', (e) => {
-      if (e.target.id === 'dmModal') closeDMModal();
+      if(e.target.id === 'dmModal') closeDMModal();
     });
 
-    // Escape key to close modal
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDMModal();
+      if(e.key === 'Escape') closeDMModal();
     });
 
-// Mobile nav toggle
-    function toggleNav() {
+    function toggleNav(){
       const links = document.querySelector('.nav-links');
       links.classList.toggle('mobile');
       links.style.display = links.classList.contains('mobile') ? 'flex' : 'none';
     }
 
-    // Close mobile nav on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.querySelector('.nav-links').classList.remove('mobile');
       });
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         const t = document.querySelector(link.getAttribute('href'));
-        if(t) {
-          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if(t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // DM button handler for pricing cards - FIXED card reference
-    document.querySelectorAll('.pricing-card').forEach(card => {
-      const dmBtns = card.querySelectorAll('a[href*="discord.com"]');
-      dmBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          
-          let planKey = 'starter';
-          if(card.classList.contains('card-t2')) planKey = 'advanced';
-          if(card.classList.contains('card-t3')) planKey = 'premium';
-          if(card.classList.contains('card-t4')) planKey = 'custom';
-
-          const plan = planDetails[planKey];
-          const message = `Hi @prashweb! I'm interested in the ${plan.name}. ${plan.desc}`;
-          
-          // Copy message to clipboard
-          navigator.clipboard.writeText(message).then(() => {
-            // Show success feedback
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied! Opening Discord...';
-            btn.style.pointerEvents = 'none';
-            btn.style.opacity = '0.7';
-            
-            // Open Discord DM after brief delay
-            setTimeout(() => {
-              window.open('https://discord.com/users/1353401419784257639', '_blank');
-              
-              // Reset button after 3 seconds
+    // ================= CARD INTERACTIONS (runs after render) =================
+    function attachCardInteractions(){
+      // DM button handler
+      document.querySelectorAll('.pricing-card').forEach(card => {
+        const dmBtns = card.querySelectorAll('a[href*="discord.com"]');
+        dmBtns.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let planKey = 'starter';
+            if(card.classList.contains('card-t2')) planKey = 'advanced';
+            if(card.classList.contains('card-t3')) planKey = 'premium';
+            if(card.classList.contains('card-t4')) planKey = 'custom';
+            const plan = planDetails[planKey];
+            const message = `Hi @prashweb! I'm interested in the ${plan.name}. ${plan.desc}`;
+            navigator.clipboard.writeText(message).then(() => {
+              const originalHTML = btn.innerHTML;
+              btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied! Opening Discord...';
+              btn.style.pointerEvents = 'none';
+              btn.style.opacity = '0.7';
               setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.style.pointerEvents = '';
-                btn.style.opacity = '';
-              }, 3000);
-            }, 500);
+                window.open('https://discord.com/users/1353401419784257639', '_blank');
+                setTimeout(() => {
+                  btn.innerHTML = originalHTML;
+                  btn.style.pointerEvents = '';
+                  btn.style.opacity = '';
+                }, 3000);
+              }, 500);
+            });
           });
         });
       });
-    });
 
-    // Smooth mouse tilt effect for cards with interpolation
-document.querySelectorAll('.pricing-card, .step-card').forEach(card => {
-      // Disable tilt on mobile (<768px) for perf
-      if (window.innerWidth < 768) return;
-      
-      let tiltX = 0, tiltY = 0;
-      let targetTiltX = 0, targetTiltY = 0;
-      
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        targetTiltX = (y - centerY) / 25;
-        targetTiltY = (centerX - x) / 25;
-        
-        // Smooth interpolation for buttery tilt
-        tiltX += (targetTiltX - tiltX) * 0.1;
-        tiltY += (targetTiltY - tiltY) * 0.1;
-        
-        card.style.transform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(15px)`;
+      // Tilt effect
+      document.querySelectorAll('.pricing-card, .step-card').forEach(card => {
+        if(window.innerWidth < 768) return;
+        let tiltX = 0, tiltY = 0, targetTiltX = 0, targetTiltY = 0;
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          targetTiltX = (y - rect.height/2) / 25;
+          targetTiltY = (rect.width/2 - x) / 25;
+          tiltX += (targetTiltX - tiltX) * 0.1;
+          tiltY += (targetTiltY - tiltY) * 0.1;
+          card.style.transform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(15px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) translateZ(0)';
+          tiltX = 0; tiltY = 0; targetTiltX = 0; targetTiltY = 0;
+          setTimeout(() => { card.style.transition = ''; }, 600);
+        });
       });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-        card.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) translateZ(0)';
-        tiltX = 0;
-        tiltY = 0;
-        targetTiltX = 0;
-        targetTiltY = 0;
-        
-        setTimeout(() => {
-          card.style.transition = '';
-        }, 600);
-      });
-    });
+    }
 
     // Smooth button press feedback
     document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mousedown', (e) => {
-        btn.style.transform = 'scale(0.97)';
-      });
-      
-      btn.addEventListener('mouseup', () => {
-        btn.style.transform = '';
-      });
-      
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
+      btn.addEventListener('mousedown', () => { btn.style.transform = 'scale(0.97)'; });
+      btn.addEventListener('mouseup',   () => { btn.style.transform = ''; });
+      btn.addEventListener('mouseleave',() => { btn.style.transform = ''; });
     });
 
-    // ADMIN PANEL JS - OBFUSCATED AUTH
-    const ADMIN_SECRET = btoa('prash2024pixel'); // Base64 obfuscated password
-    const DISCORD_ID = '1353401419784257639';
-    let adminLoggedIn = false;
+    // Page view tracking
     let pageViews = parseInt(localStorage.getItem('totalViews') || '0');
-    let uniqueVisitors = new Set(JSON.parse(localStorage.getItem('visitors') || '[]')).size;
-    let dmClicks = parseInt(localStorage.getItem('dmClicks') || '0');
-
-    // Track visitor
-    if (!localStorage.getItem('visitorId')) {
+    if(!localStorage.getItem('visitorId')){
       const visitorId = Date.now().toString(36) + Math.random().toString(36).substr(2);
       const visitors = JSON.parse(localStorage.getItem('visitors') || '[]');
       visitors.push(visitorId);
       localStorage.setItem('visitors', JSON.stringify(visitors));
+      localStorage.setItem('visitorId', visitorId);
     }
-    localStorage.setItem('visitorId', 'true');
     pageViews++;
     localStorage.setItem('totalViews', pageViews.toString());
-    updateStats();
 
-    // Check URL param for admin
-    if (new URLSearchParams(window.location.search).get('admin') === 'prash2024pixel') {
-      document.getElementById('passwordModal').style.display = 'flex';
-      document.body.classList.add('admin-protected');
-    }
-
-    function checkPassword() {
-      const pass = document.getElementById('adminPass').value;
-      if (btoa(pass) === ADMIN_SECRET) {
-        adminLoggedIn = true;
-        document.getElementById('passwordModal').style.display = 'none';
-        document.getElementById('adminPanel').classList.add('active');
-        document.body.classList.add('admin-active');
-        updateStats();
-      } else {
-        alert('❌ Wrong password!');
-      }
-    }
-
-    function logoutAdmin() {
-      adminLoggedIn = false;
-      document.getElementById('adminPanel').classList.remove('active');
-      document.body.classList.remove('admin-active');
-    }
-
-    function saveConfig() {
-      const config = {
-        starter: document.getElementById('starterPrice').value,
-        advanced: document.getElementById('advancedPrice').value,
-        premium: document.getElementById('premiumPrice').value,
-        custom: document.getElementById('customPrice').value
-      };
-      localStorage.setItem('siteConfig', JSON.stringify(config));
-      alert('✅ Config saved!');
-      location.reload();
-    }
-
-    function updateStats() {
-      if (!adminLoggedIn) return;
-      document.getElementById('totalViews').textContent = pageViews;
-      document.getElementById('uniqueVisitors').textContent = uniqueVisitors;
-      document.getElementById('dmClicks').textContent = dmClicks;
-      // Load config
-      const config = JSON.parse(localStorage.getItem('siteConfig') || '{}');
-      document.getElementById('starterPrice').value = config.starter || 10;
-      document.getElementById('advancedPrice').value = config.advanced || 20;
-      document.getElementById('premiumPrice').value = config.premium || 30;
-      document.getElementById('customPrice').value = config.custom || '50–100';
-    }
-
-    // DM click tracking
-    document.querySelectorAll('a[href*="discord.com/users"]').forEach(link => {
-      link.addEventListener('click', () => {
-        dmClicks++;
-        localStorage.setItem('dmClicks', dmClicks.toString());
-        if (adminLoggedIn) updateStats();
-      });
-    });
-
-// Diagnostics: Log section visibility
-console.log('✅ All sections loaded:', {
-  hero: !!document.getElementById('hero'),
-  pricing: !!document.getElementById('pricing'), 
-  order: !!document.getElementById('order'),
-  contact: !!document.getElementById('contact')
-});
-
-// Anti-inspect (disabled for debugging - re-enable after fix)
-// document.addEventListener('contextmenu', e => e.preventDefault()); // Disabled for debugging
-
-    // Discord deep link
-    document.querySelectorAll('a[href*="discord.com"]').forEach(link => {
-      link.addEventListener('click', e => {
-        const discordUrl = 'discord://-/users/1353401419784257639';
-        window.location.href = discordUrl;
-        setTimeout(() => window.open(link.href, '_blank'), 100);
-      });
+    console.log('✅ PixelPrash loaded. Sections:', {
+      hero: !!document.getElementById('hero'),
+      pricing: !!document.getElementById('pricing'),
+      order: !!document.getElementById('order'),
+      contact: !!document.getElementById('contact')
     });
   </script>
 
